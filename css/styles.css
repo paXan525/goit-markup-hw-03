@@ -8,6 +8,8 @@
   --footer-contact-color: rgba(255, 255, 255, 0.6);
   --background-button-color: #f5f4fa;
   --secondary-background-color: #2f303a;
+  --header-border-color: #ececec;
+  --portfolio-border-color: #eeeeee;
 }
 
 body {
@@ -19,7 +21,17 @@ body {
   letter-spacing: 0.03em;
 }
 
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
 .list {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -37,8 +49,33 @@ body {
   overflow: hidden;
 }
 
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* Секція Header */
+.header {
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+.header .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
+  display: block;
+
   color: var(--title-text-color);
   font-family: Raleway;
   font-weight: 700;
@@ -51,7 +88,20 @@ body {
   color: var(--link-active-color);
 }
 
+.header-list {
+  display: flex;
+  margin-left: 93px;
+}
+
+.header-nav .header-item + .header-item {
+  margin-left: 50px;
+}
+
 .header-nav .header-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--link-base-color);
   font-weight: 500;
   font-size: 14px;
@@ -69,7 +119,20 @@ body {
   color: var(--link-active-color);
 }
 
+.header-contacts-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.header-contacts-list .header-contacts-item + .header-contacts-item {
+  margin-left: 50px;
+}
+
 .header-contacts-list .contacts-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -85,20 +148,26 @@ body {
 
 /* Секція Hero */
 .hero {
+  text-align: center;
   background-color: var(--secondary-background-color);
 }
 
 .hero-title {
+  margin-bottom: 40px;
   color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .hero-batton {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 10px 32px;
+  min-width: 200px;
+
   background-color: var(--link-active-color);
   color: var(--white-color);
   font-family: inherit;
@@ -106,8 +175,10 @@ body {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  border: none;
+  text-align: center;
+  border: transparent;
 }
 .hero-batton:hover,
 .hero-batton:focus {
@@ -124,7 +195,16 @@ body {
 }
 
 /* Секція Benefits */
+
+.benefits-list {
+  display: flex;
+}
+
+.benefits-item {
+  width: 270px;
+}
 .benefits .benefits-title {
+  margin-bottom: 10px;
   color: var(--link-base-color);
   font-weight: 700;
   font-size: 14px;
@@ -133,17 +213,75 @@ body {
 }
 
 /* Секція About */
+.about-title {
+  text-align: center;
+}
+
+.about .container {
+  padding-top: 0;
+}
+
+.about-title {
+  margin-bottom: 50px;
+}
+
+.about-list {
+  display: flex;
+}
+
+.about-item {
+  width: 370px;
+  margin-right: 30px;
+}
+
+.about-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.about-img {
+  display: block;
+}
 
 /* Секція Team */
+
 .team {
   background-color: var(--background-button-color);
+  text-align: center;
+}
+
+.team-title {
+  padding-bottom: 50px;
+}
+
+.team-list {
+  display: flex;
 }
 
 .team-item {
+  width: 270px;
+  margin-right: 30px;
+}
+
+.team-item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.team-item {
+  width: 270px;
+  height: 368px;
   background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+.team-img {
+  display: block;
+  margin-bottom: 30px;
 }
 
 .team-unit {
+  margin-bottom: 10px;
+
   color: var(--link-base-color);
   font-weight: 500;
   font-size: 16px;
@@ -152,6 +290,8 @@ body {
 }
 
 .team .job-title {
+  margin-bottom: 30px;
+
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -162,11 +302,22 @@ body {
   background-color: var(--secondary-background-color);
 }
 
+.footer .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 .footer .logo {
+  display: inline-block;
+  margin-bottom: 20px;
+
   color: var(--white-color);
 }
 
 .footer-address {
+  display: inline-block;
+  margin-bottom: 9px;
+
   color: var(--white-color);
   font-style: normal;
   font-size: 14px;
@@ -179,6 +330,8 @@ body {
 }
 
 .footer-contact {
+  display: inline-block;
+  margin-bottom: 9px;
   color: var(--footer-contact-color);
   font-style: normal;
   font-size: 14px;
@@ -192,12 +345,19 @@ body {
 
 /* Секція Portfolio */
 
-.button-filters {
-  color: var(--link-base-color);
-  background-color: var(--white-color);
+.portfolio-filters-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-filters-list .item + .item {
+  margin-left: 8px;
 }
 
 .portfolio-filters-item {
+  padding: 6px 22px;
+
   background-color: var(--background-button-color);
   color: var(--link-base-color);
   font-family: inherit;
@@ -206,20 +366,57 @@ body {
   line-height: 1.62;
   letter-spacing: 0.03em;
   cursor: pointer;
-  border: none;
+  border: transparent;
+  border-radius: 4px;
 }
 
 .portfolio-filters-item:hover,
 .portfolio-filters-item:focus {
   background-color: var(--link-active-color);
   color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-projects-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-projects-item {
+  width: 370px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+
+  background-color: var(--white-color);
+}
+
+.portfolio-projects-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.portfolio-projects-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
 }
 
 .portfolio-link {
   text-decoration: none;
 }
 
+.portfolio-img {
+  display: block;
+}
+
+.portfolio .title {
+  padding: 20px 24px;
+  border-left: 1px solid var(--portfolio-border-color);
+  border-right: 1px solid var(--portfolio-border-color);
+  border-bottom: 1px solid var(--portfolio-border-color);
+}
+
 .portfolio-project {
+  margin-bottom: 4px;
+
   color: var(--link-base-color);
   font-weight: 700;
   font-size: 18px;
